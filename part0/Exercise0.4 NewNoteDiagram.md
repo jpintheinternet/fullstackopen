@@ -2,34 +2,34 @@ sequenceDiagram
     participant browser
     participant server
 
-    browser SOLID_ARROW server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
     activate server
     Note right of browser: Submitting the form triggers an HTTP POST request to address 
 /exampleapp/new_note
-    server Dotted_ARROW browser: HTTP 302, URL redirect: /exampleapp/notes
+    server-->>browser: HTTP 302, URL redirect: /exampleapp/notes
     deactivate server
 
-    browser SOLID_ARROW server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
     activate server
-    server DOTTED_ARROW browser: HTML document
+    server-->>browser: HTML document
     deactivate server
 
-    browser SOLID_ARROW server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
     activate server
-    server DOTTED_ARROW browser: the css file
+    server-->>browser: the css file
     deactivate server
     
-    browser SOLID_ARROW server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
     activate server
-    server DOTTED_ARROW browser: the JavaScript file
+    server-->>browser: the JavaScript file
     deactivate server
 
     Note right of browser: The browser starts executing the JavaScript code that fetches the JSON 
 from the server
 
-    browser SOLID_ARROW server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
     activate server
-    server DOTTED_ARROW browser: [{ "content": "HTML is easy", "date": "2023-1-1" }, ... ]
+    server-->>browser: [{ "content": "HTML is easy", "date": "2023-1-1" }, ... ]
     deactivate server
 
     Note right of browser: The browser executes the callback function that renders the notes
