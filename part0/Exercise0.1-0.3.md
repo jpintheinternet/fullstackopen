@@ -11,3 +11,6 @@ https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Your_first_HTML_form
 
 ### Mermaid GitHub
 https://github.com/mermaid-js/mermaid
+
+### HTTP
+https://developer.mozilla.org/en-US/docs/Web/HTTP
